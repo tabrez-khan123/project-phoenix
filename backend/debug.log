@@ -1,0 +1,40 @@
+[VIDEO] Received 1 frames
+[VIDEO] Assessment complete: unknown
+[VIDEO ERROR] InvalidDocument: cannot encode object: <function <lambda> at 0x00000214517296C0>, of type: <class 'function'>
+Traceback (most recent call last):
+  File "C:\Users\Mirza Zabiullah\Desktop\phoenixv2\backend\phoenix_backend.py", line 553, in assess_video
+    questions = get_questions_for_condition(condition_report)
+  File "C:\Users\Mirza Zabiullah\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 671, in insert_one
+    self._insert_one(
+  File "C:\Users\Mirza Zabiullah\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 611, in _insert_one
+    self.__database.client._retryable_write(acknowledged, _insert_command, session)
+  File "C:\Users\Mirza Zabiullah\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1568, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mirza Zabiullah\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1413, in _retry_with_session
+    return self._retry_internal(retryable, func, session, bulk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mirza Zabiullah\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mirza Zabiullah\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\mongo_client.py", line 1460, in _retry_internal
+    return func(session, conn, retryable)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mirza Zabiullah\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\collection.py", line 599, in _insert_command
+    result = conn.command(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Mirza Zabiullah\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\helpers.py", line 315, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mirza Zabiullah\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 960, in command
+    self._raise_connection_failure(error)
+  File "C:\Users\Mirza Zabiullah\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\pool.py", line 932, in command
+    return command(
+           ^^^^^^^^
+  File "C:\Users\Mirza Zabiullah\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\network.py", line 150, in command
+    request_id, msg, size, max_doc_size = message._op_msg(
+                                          ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mirza Zabiullah\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\message.py", line 765, in _op_msg
+    return _op_msg_uncompressed(flags, command, identifier, docs, opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bson.errors.InvalidDocument: cannot encode object: <function <lambda> at 0x00000214517296C0>, of type: <class 'function'>
